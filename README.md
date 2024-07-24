@@ -6,12 +6,12 @@
     <meta name="description" content="Projeto de Testes de Persistência com Hibernate e JUnit">
     <meta name="keywords" content="Java, PostgreSQL, JUnit, Eclipse">
     <meta name="author" content="Ana Alice Rodrigues">
-    
+
 </head>
 <body>
 
 <header>
-    <h1>Projeto de Testes de Persistência com Hibernate e JUnit</h1>
+    <h2>Projeto de Testes de Persistência com Hibernate e JUnit</h2>
 </header>
 
 <details>
@@ -63,6 +63,8 @@ ProjetoTestesPersistencia
 │   │   │   ├── br.com.ana.domain
 │   │   │   │   ├── Cliente.java
 │   │   │   │   ├── Produto.java
+│   │   │   │   ├── Curso.java
+│   │   │   │   ├── Matricula.java
 │   ├── test
 │       ├── java
 │           ├── br.com.ana
@@ -84,7 +86,7 @@ ProjetoTestesPersistencia
 <section id="banco-de-dados">
     <h2>Banco de Dados</h2>
     <h3>Tabelas</h3>
-    <h4>cliente</h4>
+    <h4>tb_curso</h4>
     <table>
         <thead>
             <tr>
@@ -98,36 +100,55 @@ ProjetoTestesPersistencia
                 <td>BIGINT</td>
             </tr>
             <tr>
+                <td>codigo</td>
+                <td>VARCHAR(255)</td>
+            </tr>
+            <tr>
+                <td>descricao</td>
+                <td>VARCHAR(255)</td>
+            </tr>
+            <tr>
                 <td>nome</td>
                 <td>VARCHAR(255)</td>
             </tr>
+        </tbody>
+    </table>
+    <h4>tb_matricula</h4>
+    <table>
+        <thead>
             <tr>
-                <td>cpf</td>
-                <td>VARCHAR(11)</td>
+                <th>Coluna</th>
+                <th>Tipo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>BIGINT</td>
             </tr>
             <tr>
-                <td>cidade</td>
+                <td>codigo</td>
                 <td>VARCHAR(255)</td>
             </tr>
             <tr>
-                <td>endereco</td>
+                <td>data_matricula</td>
+                <td>DATE</td>
+            </tr>
+            <tr>
+                <td>status</td>
                 <td>VARCHAR(255)</td>
             </tr>
             <tr>
-                <td>estado</td>
-                <td>VARCHAR(2)</td>
+                <td>valor</td>
+                <td>DECIMAL</td>
             </tr>
             <tr>
-                <td>numero</td>
-                <td>INTEGER</td>
-            </tr>
-            <tr>
-                <td>telefone</td>
-                <td>VARCHAR(20)</td>
+                <td>id_curso_fk</td>
+                <td>BIGINT</td>
             </tr>
         </tbody>
     </table>
-    <h4>produto</h4>
+    <h4>tb_produto</h4>
     <table>
         <thead>
             <tr>
@@ -156,7 +177,8 @@ ProjetoTestesPersistencia
     </table>
     <h3>Sequences</h3>
     <ul>
-        <li>cliente_id_seq</li>
+        <li>curso_id_seq</li>
+        <li>matricula_id_seq</li>
         <li>produto_id_seq</li>
     </ul>
 </section>
